@@ -1,3 +1,3 @@
-export default function Status(){
-    return(<>Status</>)
+export default function Status({currentPlayer}){
+    return(<p>{currentPlayer} Wins!!!</p>)
 }
