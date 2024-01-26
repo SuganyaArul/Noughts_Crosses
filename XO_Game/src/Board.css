@@ -1,13 +1,15 @@
-#board-container{
-    /* border: 1px solid black; */
-    /* background-color: blue; */
-    display:grid;
-    grid-template-columns: repeat(3, 150px);
-    grid-template-rows: repeat(3, 150px);
-    grid-gap: 1em;
+#board-container {
+	/* border: 1px solid black; */
+	/* background-color: blue; */
+	display: grid;
+	grid-template-columns: repeat(3, 150px);
+	grid-template-rows: repeat(3, 150px);
+	grid-gap: 1em;
 }
 
-.board-square{
-    border: 1px solid black;
-    background-color: blueviolet;
+.board-square {
+	border: 1px solid black;
+	background-color: blueviolet;
+	color: white;
+	font-size: 5rem;
 }
