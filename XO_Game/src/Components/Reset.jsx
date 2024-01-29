@@ -1,5 +1,5 @@
-export default function Reset({setBoard, boardDefault, setPointer, setWinStatus}){
+export default function Reset({setBoard, boardDefault, setPointer, setStatus}){
     return(<button onClick={()=>{setBoard(boardDefault);
         setPointer('button');
-        setWinStatus(false)}}>Reset</button>)
+        setStatus('play')}}>Reset</button>)
 }

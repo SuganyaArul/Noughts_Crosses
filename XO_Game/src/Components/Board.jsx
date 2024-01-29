@@ -2,7 +2,7 @@ import { useState } from 'react';
 import '../Board.css'
 // import Status from './Status'
 
-export default function Board({board, setBoard, currentPlayer, setCurrentPlayer ,setWinStatus, pointer, setPointer}){
+export default function Board({board, setBoard, currentPlayer, setCurrentPlayer ,setStatus, pointer, setPointer}){
     
     function changeCell(event){
         const cellId = event.target.id;
@@ -13,9 +13,13 @@ export default function Board({board, setBoard, currentPlayer, setCurrentPlayer 
 
         // review status
         const winner=calculateWinner(newCellValue);
+        const notDraw = checkNotDraw(newCellValue);
         if(winner !== null){
-            setWinStatus(true)
+          setStatus(true)
             setPointer('pointer')
+        }else if (notDraw === false){
+          setStatus("draw")
+          setPointer('pointer')
         }
         else{
         let nextPlayer = 'x'
@@ -46,7 +50,10 @@ export default function Board({board, setBoard, currentPlayer, setCurrentPlayer 
           return null;
     }
 
-
+    function checkNotDraw(board){
+      return Object.values(board).includes('')
+      }
+      
     return(<section>
         <h2>Board</h2>
         <div id='board-container' className={pointer}>
