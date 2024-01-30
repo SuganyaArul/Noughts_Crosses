@@ -6,7 +6,7 @@ function App() {
 
   return (
     <main>
-   <h1>XO_GAME</h1>
+   <h1>TIC TAC TOE</h1>
    <GameManager/>
    </main>
   )

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../Board.css'
+import '../App.css'
 // import Status from './Status'
 
 export default function Board({board, setBoard, currentPlayer, setCurrentPlayer ,setStatus, pointer, setPointer}){
@@ -15,16 +15,16 @@ export default function Board({board, setBoard, currentPlayer, setCurrentPlayer 
         const winner=calculateWinner(newCellValue);
         const notDraw = checkNotDraw(newCellValue);
         if(winner !== null){
-          setStatus(true)
+          setStatus('win')
             setPointer('pointer')
         }else if (notDraw === false){
           setStatus("draw")
           setPointer('pointer')
         }
         else{
-        let nextPlayer = 'x'
-        if (currentPlayer === 'x'){
-            nextPlayer='o'
+        let nextPlayer = 'X'
+        if (currentPlayer === 'X'){
+            nextPlayer='O'
         }
         setCurrentPlayer(nextPlayer)}}
     }
@@ -53,9 +53,8 @@ export default function Board({board, setBoard, currentPlayer, setCurrentPlayer 
     function checkNotDraw(board){
       return Object.values(board).includes('')
       }
-      
+
     return(<section>
-        <h2>Board</h2>
         <div id='board-container' className={pointer}>
         <div id='r1c1' className='board-square' onClick={(event)=>changeCell(event)}>{board.r1c1}</div>
         <div id='r1c2' className='board-square' onClick={(event)=>changeCell(event)}>{board.r1c2}</div>
