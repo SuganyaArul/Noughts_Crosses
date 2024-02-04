@@ -1,3 +1,2 @@
 # Tiny React Apps
-
-Instructions for this sprint can be found at: https://l2c.northcoders.com/courses/fe/tiny-react-apps
+This App allow you to play and define Who wins or draw. Enjoy the game!!!
